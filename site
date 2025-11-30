@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Espaço Físico</title>
+  <meta name="description" content="Espaço Físico — conversas e notas sobre física" />
+  <style>
+    :root{--bg:#0f1724;--card:#0b1220;--muted:#94a3b8;--accent:#7dd3fc}
+    *{box-sizing:border-box}
+    body{margin:0;font-family:Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial;color:#e6eef8;background:linear-gradient(180deg,#071028 0%,#05122a 100%);-webkit-font-smoothing:antialiased}
+    .container{max-width:1000px;margin:36px auto;padding:20px}
+    header{display:flex;align-items:center;justify-content:space-between;gap:16px}
+    .brand{display:flex;align-items:center;gap:12px}
+    .logo{width:56px;height:56px;border-radius:12px;background:linear-gradient(135deg,var(--accent),#60a5fa);display:flex;align-items:center;justify-content:center;color:#012; font-weight:700;font-size:20px}
+    h1{margin:0;font-size:24px}
+    nav{display:flex;gap:12px}
+    nav a{color:var(--muted);text-decoration:none;padding:8px 12px;border-radius:8px}
+    nav a:hover{background:rgba(125,211,252,0.08);color:var(--accent)}
+    .hero{margin-top:22px;padding:20px;background:rgba(255,255,255,0.02);border-radius:12px}
+    .grid{display:grid;grid-template-columns:1fr 320px;gap:18px;margin-top:18px}
+    .card{background:rgba(255,255,255,0.02);padding:16px;border-radius:10px}
+    .list{display:flex;flex-direction:column;gap:8px}
+    footer{margin-top:28px;padding:12px;text-align:center;color:var(--muted);font-size:13px}
+    .btn{display:inline-block;padding:8px 12px;border-radius:8px;background:transparent;border:1px solid rgba(255,255,255,0.04);cursor:pointer}
+    .search{width:100%;padding:10px;border-radius:8px;border:1px solid rgba(255,255,255,0.03);background:transparent;color:inherit}
+    @media(max-width:880px){.grid{grid-template-columns:1fr}.logo{width:44px;height:44px}nav{display:none}}
+  </style>
+</head>
+<body>
+  <div class="container">
+    <header>
+      <div class="brand">
+        <div class="logo">EF</div>
+        <div>
+          <h1>Espaço Físico</h1>
+          <div style="color:var(--muted);font-size:13px">Conversas, notas e recursos sobre física</div>
+        </div>
+      </div>
+
+      <nav aria-label="menu">
+        <a href="#home">Início</a>
+        <a href="#conversas">Conversas</a>
+        <a href="#notas">Notas</a>
+        <a href="#recursos">Recursos</a>
+        <a href="#contato">Contato</a>
+      </nav>
+    </header>
+
+    <main>
+      <section id="home" class="hero card">
+        <h2>Bem-vindo ao Espaço Físico</h2>
+        <p style="color:var(--muted)">Um lugar para anotar ideias, discutir problemas e guardar pequenos textos e códigos sobre mecânica, campos, tensores, QFT e mais — com a vibe de "mesa de bar" entre colegas.</p>
+        <div style="margin-top:12px">
+          <button class="btn" onclick="location.hash='#conversas'">Ver conversas</button>
+          <button class="btn" style="margin-left:8px" onclick="location.hash='#notas'">Ver notas</button>
+        </div>
+      </section>
+
+      <div class="grid">
+        <section class="card">
+          <h3 id="conversas">Conversas</h3>
+          <p style="color:var(--muted)">Espaço para posts ou pequenos debates. Ex.: "Mesa do Boteco — discussão sobre modos normais".</p>
+          <div class="list" style="margin-top:12px">
+            <div style="padding:10px;border-radius:8px;background:rgba(255,255,255,0.01)"><strong>Como calcular modos normais</strong><div style="color:var(--muted);font-size:13px">Resumo curto + link para nota</div></div>
+            <div style="padding:10px;border-radius:8px;background:rgba(255,255,255,0.01)"><strong>Seminário: Laplaciano de 1/r</strong><div style="color:var(--muted);font-size:13px">Anotações e PDF</div></div>
+            <div style="padding:10px;border-radius:8px;background:rgba(255,255,255,0.01)"><strong>Clube do Tensor — próxima reunião</strong><div style="color:var(--muted);font-size:13px">Tópicos: diagonalização de tensores</div></div>
+          </div>
+        </section>
+
+        <aside class="card">
+          <h4>Pesquisar</h4>
+          <input class="search" placeholder="Procurar no Espaço Físico..." oninput="console.log('search', this.value)" />
+
+          <h4 style="margin-top:14px">Links rápidos</h4>
+          <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+            <a class="btn" href="#notas">Notas</a>
+            <a class="btn" href="#recursos">Recursos</a>
+            <a class="btn" href="#contato">Contato</a>
+          </div>
+        </aside>
+      </div>
+
+      <section id="notas" class="card" style="margin-top:18px">
+        <h3>Notas</h3>
+        <p style="color:var(--muted)">Coleção de explicações rápidas — ideal para material de apoio ao estudos.</p>
+        <ul style="color:var(--muted)">
+          <li>Diagonalização de tensores — exemplo passo a passo</li>
+          <li>Osciladores acoplados — modos normais</li>
+          <li>Transformadas de Laplace — tabela básica</li>
+        </ul>
+      </section>
+
+      <section id="recursos" class="card" style="margin-top:18px">
+        <h3>Recursos</h3>
+        <p style="color:var(--muted)">Links, PDFs e repositórios úteis.</p>
+        <div style="display:flex;flex-direction:column;gap:8px;margin-top:8px">
+          <a class="btn" href="#">Repositório de códigos</a>
+          <a class="btn" href="#">Apresentações</a>
+          <a class="btn" href="#">PDFs e artigos</a>
+        </div>
+      </section>
+
+      <section id="contato" class="card" style="margin-top:18px">
+        <h3>Contato</h3>
+        <p style="color:var(--muted)">Quer colaborar ou sugerir um tema? Manda um e-mail ou um PR no GitHub.</p>
+        <p style="color:var(--muted)"><strong>Próximo passo:</strong> clone este arquivo para seu repositório <code>seu-usuario.github.io</code> e faça deploy no GitHub Pages.</p>
+      </section>
+    </main>
+
+    <footer>
+      © <span id="year"></span> Espaço Físico — feito por Willyan
+    </footer>
+  </div>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+    // Pequenas melhorias: foco em acessibilidade e navegação por hash
+    if(location.hash) setTimeout(()=>{const el=document.querySelector(location.hash); if(el) el.scrollIntoView({behavior:'smooth',block:'start'})},200);
+  </script>
+</body>
+</html>
